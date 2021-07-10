@@ -1,6 +1,6 @@
 #include "Dicom_util.h"
 
-#include "catch.hpp"
+#include "catch/catch.hpp"
 
 #include <cstring>
 #include <dcmtk/dcmdata/dcelem.h>

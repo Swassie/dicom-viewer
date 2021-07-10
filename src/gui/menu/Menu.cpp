@@ -1,6 +1,5 @@
 #include "gui/menu/Menu.h"
 
-#include "gui/About_dialog.h"
 #include "gui/Main_window.h"
 #include "gui/View_factory.h"
 #include "gui/View_manager.h"
@@ -58,11 +57,8 @@ void Menu::add_batch_element(Dicom_studio& studio) {
     addAction("Edit elements in all files", [&studio] {studio.batch_element();});
 }
 
-void Menu::add_about(Main_window& main_window) {
-    addAction("About", [&main_window] {
-        About_dialog dialog(&main_window);
-        dialog.exec();
-    });
+void Menu::add_about(Main_window&) {
+
 }
 
 void Menu::add_switch_to_image_view(View& view, View_factory& view_factory,

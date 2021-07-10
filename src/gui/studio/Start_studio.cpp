@@ -18,7 +18,7 @@ Start_studio::Start_studio(Main_window& main_window)
 }
 
 void Start_studio::open_files() {
-    auto files = Gui_util::load_files(&m_main_window);
+    std::vector<std::unique_ptr<Dicom_file>> files;
     if(files.empty()) {
         return;
     }

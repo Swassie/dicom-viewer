@@ -1,6 +1,6 @@
 #include "gui/tool/Transform_tool.h"
 
-#include "catch.hpp"
+#include "catch/catch.hpp"
 
 #include <QMouseEvent>
 #include <QTransform>

@@ -133,6 +133,8 @@ void Dataset_view::load_value_from_file(const QModelIndex& index) {
 void Dataset_view::on_custom_context_menu(const QPoint& pos) {
     QModelIndex index = m_tree_view->indexAt(pos);
     if(!index.isValid()) {
+        QContextMenuEvent event(QContextMenuEvent::Mouse, pos);
+        contextMenuEvent(&event);
         return;
     }
     const DcmEVR vr = m_dataset_model->get_vr(index);

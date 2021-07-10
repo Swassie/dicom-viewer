@@ -42,7 +42,7 @@ Dicom_studio::Dicom_studio(Main_window& main_window, std::vector<std::unique_ptr
 }
 
 void Dicom_studio::open_files() {
-    auto files = Gui_util::load_files(&m_main_window);
+    std::vector<std::unique_ptr<Dicom_file>> files;
     if(files.empty()) {
         return;
     }
@@ -142,12 +142,12 @@ void Dicom_studio::set_current_file(Dicom_file* new_file) {
 }
 
 bool Dicom_studio::is_ok_to_quit() {
-    bool unsaved_changes = std::any_of(m_files.begin(), m_files.end(), [] (auto& file) {
-        return file->has_unsaved_changes();
-    });
-    if(unsaved_changes && !Gui_util::should_unsaved_changes_be_discarded(&m_main_window)) {
-        return false;
-    }
+    // bool unsaved_changes = std::any_of(m_files.begin(), m_files.end(), [] (auto& file) {
+    //     return file->has_unsaved_changes();
+    // });
+    // if(unsaved_changes && !Gui_util::should_unsaved_changes_be_discarded(&m_main_window)) {
+    //     return false;
+    // }
     return true;
 }
 

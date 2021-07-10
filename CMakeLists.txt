@@ -10,19 +10,23 @@ find_package(DCMTK REQUIRED)
 
 add_executable(dcmedit
   assets/assets.qrc
+  src/dcmedit.cpp
+  src/dcmedit.h
   src/Dicom_file.cpp
   src/Dicom_file.h
   src/Dicom_util.cpp
   src/Dicom_util.h
   src/Version.cpp
   src/Version.h
-  src/gui/About_dialog.cpp
-  src/gui/About_dialog.h
+  src/common/Event.h
+  src/common/Event_handler_list.cpp
+  src/common/Event_handler_list.h
+  src/models/Dicom_files.cpp
+  src/models/Dicom_files.h
   src/gui/Dataset_model.cpp
   src/gui/Dataset_model.h
   src/gui/File_tree.cpp
   src/gui/File_tree.h
-  src/gui/Gui_util.cpp
   src/gui/Gui_util.h
   src/gui/Main_window.cpp
   src/gui/Main_window.h
@@ -38,8 +42,6 @@ add_executable(dcmedit
   src/gui/menu/Menu.h
   src/gui/menu/Tool_bar.cpp
   src/gui/menu/Tool_bar.h
-  src/gui/run_gui.cpp
-  src/gui/run_gui.h
   src/gui/studio/Dicom_studio.cpp
   src/gui/studio/Dicom_studio.h
   src/gui/studio/Start_studio.cpp
@@ -63,6 +65,26 @@ add_executable(dcmedit
   src/logging/Log.cpp
   src/logging/Log.h
   src/logging/Logger.h
+  src/presenters/Main_presenter.cpp
+  src/presenters/Main_presenter.h
+  src/presenters/Main_dashboard_presenter.cpp
+  src/presenters/Main_dashboard_presenter.h
+  src/presenters/Main_editor_presenter.cpp
+  src/presenters/Main_editor_presenter.h
+  src/presenters/Open_files_presenter.cpp
+  src/presenters/Open_files_presenter.h
+  src/views/About_view.cpp
+  src/views/About_view.h
+  src/views/IAbout_view.h
+  src/views/IMain_view.h
+  src/views/IOpen_files_view.h
+  src/views/IDashboard_view.h
+  src/views/Main_view.cpp
+  src/views/Main_view.h
+  src/views/Open_files_view.cpp
+  src/views/Open_files_view.h
+  src/views/Dashboard_view.cpp
+  src/views/Dashboard_view.h
   src/main.cpp
 )
 

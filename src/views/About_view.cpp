@@ -1,4 +1,4 @@
-#include "gui/About_dialog.h"
+#include "views/About_view.h"
 
 #include "Version.h"
 
@@ -8,7 +8,7 @@
 
 static QString get_about_text();
 
-About_dialog::About_dialog(QWidget* parent)
+About_view::About_view(QWidget* parent)
     : QDialog(parent) {
     auto layout = new QVBoxLayout(this);
     auto text = new QLabel(get_about_text());
@@ -20,6 +20,10 @@ About_dialog::About_dialog(QWidget* parent)
     scroll_area->setBackgroundRole(QPalette::Light);
     scroll_area->setWidget(text);
     layout->addWidget(scroll_area);
+}
+
+void About_view::show_about_dialog() {
+    exec();
 }
 
 static QString get_about_text() {
